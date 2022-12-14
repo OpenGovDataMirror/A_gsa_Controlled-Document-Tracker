@@ -1,0 +1,23 @@
+The below controlled document has been updated by {!Approval_Step__c.Assigned_Approver__c}
+
+Approval Details-
+Approver: {!Approval_Step__c.Assigned_Approver__c}
+Originating Service/Staff Office: {!Approval_Step__c.Originating_Service_Staff_Office__c}
+Due Date: {!Approval_Step__c.Due_Date__c}
+Completed Date: {!Approval_Step__c.Completed_Date__c}
+ 
+
+Controlled Document Details-
+Controlled Document ID: {!Controlled_Document__c.Name}
+Title: {!Controlled_Document__c.Title_Formula__c}
+Document Type: {!Controlled_Document__c.Correspondence_Type__c}
+Owner: {!Controlled_Document__c.OwnerFullName}
+Due Date: {!Controlled_Document__c.Due_Date__c}
+Expedite Record: {!if(Controlled_Document__c.Expedite_Record__c, "No", "Yes")}
+Expedite Instructions: {!Controlled_Document__c.Instructions_for_Expediting__c}
+Final Signatory: {!Controlled_Document__c.Final_Signatory__c}
+Summary: {!Controlled_Document__c.Summary__c}
+
+
+If you would like to view the controlled document, please click here: {!Controlled_Document__c.Link}
+If you would like to view the approval details, please click here: {!Approval_Step__c.Link}

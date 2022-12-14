@@ -1,0 +1,36 @@
+<apex:page showHeader="true" sidebar="true" standardController="Controlled_Document__c" extensions="MultiselectController" lightningStylesheets="true">
+    <apex:slds />
+    <apex:form >
+		<p/>
+		<apex:pageBlock title="Group Information">
+			<!--<p> -->
+                <apex:outputLabel value="Search: "/>
+			<apex:selectList value="{!searchObject}" multiselect="false" size="1">
+				<apex:selectOptions value="{!searchCriteria}"/>
+				<apex:actionSupport action="{!refreshAvailableUserList}" event="onchange" reRender="userPicklist" />
+			</apex:selectList> &nbsp; &nbsp;
+			<apex:outputLabel value=" for: "/>
+			<apex:inputText value="{!searchString}">
+				<apex:actionSupport action="{!refreshAvailableUserList}" event="onchange" reRender="userPicklist"/>
+			</apex:inputText>
+			&nbsp;
+			<apex:commandButton value="Search" styleclass="btn slds-button slds-button_brand"  action="{!refreshAvailableUserList}" onclick="return false;"/>
+           <!-- </p> -->
+			<apex:outputPanel id="userPicklist" layout="block" style="white-space:pre;width:82%;">
+                <c:MultiselectPicklist leftLabel="Available Members"
+					leftOptions="{!leftPicklist}"
+					rightLabel="Selected Members"
+					rightOptions="{!rightPicklist}"
+					size="14"
+					width="400px"/>
+            </apex:outputPanel>
+            Email notification to selected members?&nbsp;<apex:inputCheckbox title="Email notification?"  selected="{!sendEmailNotification}" value="{!sendEmailNotification}"/> <br/>
+			<!--<apex:pageBlockButtons  >-->
+                <div class="slds-scope" style="text-align:center;">
+				<apex:commandButton value=" Save " styleclass="btn slds-button slds-button_brand" action="{!saveChanges}" onClick="if({!notCollaborator}) { alert('You\'re not yet a collaborator on this document. Please allow some time for the batch to process your Quick Share addition / subtraction.'); }" />
+				<apex:commandButton styleclass="btn slds-button slds-button_brand" value="Cancel"  action="{!Cancel}" onClick="location.href='{!baseUrl}/{!thisControlledDocument.Id}';"/>
+                </div>
+              <!--  </apex:pageBlockButtons> -->
+		</apex:pageBlock>
+	</apex:form>
+</apex:page>

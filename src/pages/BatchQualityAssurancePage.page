@@ -1,0 +1,54 @@
+<apex:page controller="BatchQualityAssuranceController" lightningStylesheets="true">
+    <apex:slds />    
+<center>
+
+<apex:pageBlock title="Batch Status">
+    <div style="{!batchStatusRunning}"><font size="72" color="#00AB66"><b>Running</b></font></div>
+    <div style="{!batchStatusStopped}"><font size="72" color="#FF0000"><b>Stopped</b></font></div>
+</apex:pageBlock>
+<!-- Commented for SFEEO-1961 
+<apex:pageBlock title="Outstanding Grant Update Access Requests">
+
+    <apex:pageBlockTable value="{!badCdList}" var="badCd" border="2">
+
+        <apex:column >
+            <apex:facet name="header">Controlled Document</apex:facet>
+            <apex:outputLink value="../{!badCd.controlledDocumentId}">{!badCd.controlledDocumentName}</apex:outputLink>
+        </apex:column>
+
+        <apex:column >
+            <apex:facet name="header">Requestor</apex:facet>
+            <apex:outputLink value="../{!badCd.requestorId}">{!badCd.requestorName}</apex:outputLink>
+        </apex:column>
+
+        <apex:column >
+            <apex:facet name="header">Requested Time</apex:facet>
+            <apex:outputText value="{!badCd.requestedTime}"/>
+        </apex:column>
+
+    </apex:pageBlockTable>
+
+</apex:pageBlock>
+-->
+
+<apex:pageBlock title="Last 10 Batches">
+
+    <apex:pageBlockTable value="{!batchWrapperList}" var="batch" border="2">
+
+        <apex:column >
+            <apex:facet name="header">Batch Name</apex:facet>
+            <apex:outputText value="{!batch.batchName}"/>
+        </apex:column>
+
+        <apex:column >
+            <apex:facet name="header">Last Ran</apex:facet>
+            <apex:outputText value="{!batch.completionDate}"/>
+        </apex:column>
+
+    </apex:pageBlockTable>
+
+</apex:pageBlock>
+
+</center>
+
+</apex:page>

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionCalls>
+        <description>Deactivate Modify All Access to Approval Steps</description>
+        <name>Deactivate_Modify_All_Access_to_Approval_Steps</name>
+        <label>Deactivate Modify All Access to Approval Steps</label>
+        <locationX>201</locationX>
+        <locationY>50</locationY>
+        <actionName>deactivateSessionPermSet</actionName>
+        <actionType>deactivateSessionPermSet</actionType>
+        <inputParameters>
+            <name>PermSetName</name>
+            <value>
+                <stringValue>Controlled_Document_Tracker_Exec_Sec_Admin_Modify_All</stringValue>
+            </value>
+        </inputParameters>
+    </actionCalls>
+    <description>Deactivate Modify All Access to Approval Steps</description>
+    <interviewLabel>Deactivate Modify All Access to Approval Steps {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Deactivate Modify All Access to Approval Steps</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <startElementReference>Deactivate_Modify_All_Access_to_Approval_Steps</startElementReference>
+    <status>Active</status>
+</Flow>

@@ -1,0 +1,208 @@
+<apex:page standardController="Controlled_Document__c" extensions="RelatedApprovalStepListController" lightningStylesheets="true">
+    
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
+    <apex:includeScript value="{!$Resource.jQuery}"/>
+    <script type="text/javascript" language="javascript">
+        var j$ = jQuery.noConflict();
+        function setFocusOnLoad() {}
+                function Scrolldown() {
+                    window.scrollTo(0,document.body.scrollHeight);
+        }
+        window.onclick = Scrolldown;
+        </script>
+    <style>
+        .helpTooltip {
+            border:1px solid #ECD3BF;
+            background-color:#F8E7CA;
+            color:white;
+            border-radius:12px; 
+            -webkit-border-radius:12px; 
+            -moz-border-radius:12px; 
+            width:15px;
+            height:15px;
+            text-align:center;
+            vertical-align:middle;
+            cursor:help;
+            font-size:12px;
+            font-weight:normal;
+        }
+        .helpTooltip span {
+            z-index:10;
+            display:none; 
+            padding:5px;
+            margin-left:15px;
+            width:190px; 
+            text-align:left;
+            font-size:12px;
+            font-weight:normal;
+        }  
+        .helpTooltip:hover {
+            border:1px solid #DF690A;
+            background-color:#FEB027;
+        }     
+        .helpTooltip:hover span {
+            display:inline; 
+            position:absolute;  
+            color:black;
+            border:1px solid #FFA603; 
+            background:#FEFDB9;
+        }
+    </style>
+    
+    <p>To mark approval or rejection, click on the <strong>Sequence Number</strong> of the row in which your name appears.</p>
+    <apex:form >
+        <apex:actionFunction action="{!manager.populateExternalReviewParty}" focus="reviewPartyInput" name="roleOfApproverChanged" rerender="ApprovalStepPageBlock"/>
+        <apex:actionFunction action="{!manager.determineNoRowsSelected}" name="selectionCheckboxChanged" rerender="ApprovalStepPageBlock"/>
+        <apex:pageBlock id="ApprovalStepPageBlock">
+            <apex:pageMessages />
+            <!-- commented below line for case# 24217 
+            <apex:pageBlockButtons location="top" id="pbButtons">
+                 inserted below line for case# 24217 -->
+            <apex:pageBlockButtons location="bottom" id="pbButtons">
+                <apex:commandButton action="{!manager.initiateSelected}" disabled="{!manager.noRowsSelected}" value="Initiate Selected" rendered="{!!editMode}" rerender="ApprovalStepPageBlock" />
+                <apex:commandButton action="{!manager.recallSelected}" disabled="{!manager.noRowsSelected}" value="Recall Selected" rendered="{!!editMode}" rerender="ApprovalStepPageBlock"/>
+                <apex:commandButton action="{!editMode}" value="Edit" rendered="{!!editMode}" rerender="ApprovalStepPageBlock" />
+                <apex:commandButton action="{!readMode}" value="Cancel" rendered="{!editMode}" rerender="ApprovalStepPageBlock" />
+                <apex:commandButton action="{!saveTable}" value="Save" rendered="{!editMode}" rerender="ApprovalStepPageBlock" onclick="Scrolldown()" />
+                <apex:commandButton action="{!manager.clearNewRow}" value="Cancel" rendered="{!!editMode}" rerender="ApprovalStepPageBlock" />
+            </apex:pageBlockButtons>
+            
+            <apex:pageBlockTable id="readTable" value="{!manager.ApprovalStepSelects}" var="step" >
+                <apex:column rendered="{!!editMode}">
+                    <apex:facet name="header">Select</apex:facet>
+                    <apex:inputCheckbox value="{!step.selected}" rendered="{!step.ApprovalStep.Id != null}" onChange="selectionCheckboxChanged();" disabled="{!step.ApprovalStep.Marked_for_Deletion__c}" />
+                    <apex:commandButton value="Save" action="{!manager.insertNewStep}" rerender="ApprovalStepPageBlock" rendered="{!step.ApprovalStep.Id = null}" />
+                </apex:column>
+                
+                <apex:column >
+                    <apex:facet name="header">Seq</apex:facet>
+                    <apex:outputPanel styleClass="requiredInput" layout="block" >
+                        <apex:outputPanel styleClass="requiredBlock" layout="block" title="Sequence number is required"/>
+                        <apex:inputField styleClass="shortSeqDropdown requiredTitle" value="{!step.ApprovalStep.Sequence__c}" rendered="{!!step.isLocked && (editMode || step.ApprovalStep.id = null)}" />
+                    </apex:outputPanel>
+                    <apex:outputLink value="/{!step.ApprovalStep.Id}" target="_blank" rendered="{!step.isLocked || (!editMode && step.ApprovalStep.id != null)}" >{!step.ApprovalStep.Sequence__c}</apex:outputLink>
+                </apex:column>
+                
+                <apex:column >
+                    <apex:facet name="header">Start Date</apex:facet>
+                    <apex:inputField value="{!step.ApprovalStep.Start_Date__c}" rendered="{!!step.isLocked && (editMode || step.ApprovalStep.id = null)}" html-placeholder="Start Date" />
+                    <apex:outputField value="{!step.ApprovalStep.Start_Date__c}" rendered="{!step.isLocked || (!editMode && step.ApprovalStep.id != null)}" />
+                </apex:column>
+                
+                <apex:column >
+                    <apex:facet name="header">Due Date</apex:facet>
+                    <apex:outputPanel styleClass="requiredInput" layout="block" >
+                        <apex:outputPanel styleClass="requiredBlock" layout="block" title="Due Date is required"/>
+                        <apex:inputField styleClass="requiredTitle" value="{!step.ApprovalStep.Due_Date__c}" rendered="{!!step.isLocked && (editMode || step.ApprovalStep.id = null)}" html-placeholder="Due Date"/>
+                    </apex:outputPanel>
+                    <apex:outputField value="{!step.ApprovalStep.Due_Date__c}" rendered="{!step.isLocked || (!editMode && step.ApprovalStep.id != null)}" />
+                </apex:column>
+                
+                <apex:column >
+                    <apex:facet name="header">Completed<br/>Date</apex:facet>
+                    <apex:outputField value="{!step.ApprovalStep.Completed_Date__c}" />
+                </apex:column>
+                
+                <apex:column >
+                    <apex:facet name="header">Days<br/>Open</apex:facet>
+                    <apex:outputField value="{!step.ApprovalStep.Days_Open__c}" />
+                </apex:column>
+                
+                <apex:column >
+                    <apex:facet name="header">Role of<br/>Approver</apex:facet>
+                    <apex:outputPanel styleClass="requiredInput" layout="block" >
+                        <apex:outputPanel styleClass="requiredBlock" layout="block" title="Role of Approver is required"/>
+                        <apex:inputField styleClass="shortRoleDropdown requiredTitle" value="{!step.ApprovalStep.Role_of_Approver__c}" onChange="roleOfApproverChanged()" rendered="{!!step.isLocked && (editMode || step.ApprovalStep.id = null)}"/>
+                    </apex:outputPanel>
+                    <apex:outputField value="{!step.ApprovalStep.Role_of_Approver__c}" rendered="{!step.isLocked || (!editMode && step.ApprovalStep.id != null)}" />
+                </apex:column>
+               
+                <apex:column style="min-width:200px;">
+                    <apex:facet name="header">Location</apex:facet>
+                    <apex:outputField value="{!step.ApprovalStep.Approver_s_Location__c}" />
+                </apex:column>
+
+                <!-- 
+                <apex:column >
+                    <apex:facet name="header">External<br/>Review Party</apex:facet>
+                    <apex:inputField styleClass="ExternalReviewPartyInput" id="reviewPartyInput" value="{!step.ApprovalStep.External_Review_Party__c}" rendered="{!!step.isLocked && ((editMode || step.ApprovalStep.id = null) && step.ApprovalStep.Role_of_Approver__c = EXTERNAL_REVIEW_ROLE_NAME)}" />
+                    <apex:outputField value="{!step.ApprovalStep.External_Review_Party__c}" rendered="{!step.isLocked || ((!editMode && step.ApprovalStep.id != null) || step.ApprovalStep.Role_of_Approver__c != EXTERNAL_REVIEW_ROLE_NAME)}" />
+                </apex:column>
+                
+                <apex:column >
+                    <apex:facet name="header">Approver's Service/Staff Office</apex:facet>
+                    <apex:outputPanel styleClass="requiredInput" layout="block" >
+                        <apex:outputPanel styleClass="requiredBlock" layout="block" title="Approver's Service/Staff is required"/>
+                        <apex:inputField styleClass="requiredTitle" value="{!step.ApprovalStep.Office__c}" rendered="{!!step.isLocked && (editMode || step.ApprovalStep.id = null)}" style="max-width:175px;"/>
+                    </apex:outputPanel>
+                    <apex:outputField value="{!step.ApprovalStep.Office__c}" rendered="{!step.isLocked || (!editMode && step.ApprovalStep.id != null)}" />
+                </apex:column>
+                -->
+                
+                <apex:column value="{!step.ApprovalStep.Approval_Status__c}" />
+                
+                <apex:column >
+                    <apex:facet name="header">
+                        Assigned Approver
+                        <span class="helpTooltip">?
+                            <span>
+                                <!-- {!helptext} -->
+                                The Approver assigned to this <br/>
+                                Approval Step. The Actual <br/> 
+                                Approver will be the Assigned <br/>
+                                Approver or the Approver who <br/>
+                                completed the Approval task on <br/>
+                                behalf of the Assigned Approver.
+                            </span>
+                        </span>
+                    </apex:facet>
+                    <apex:outputPanel styleClass="requiredInput" layout="block" >
+                        <apex:outputPanel styleClass="requiredBlock" layout="block" title="Assigned Approver is required" />
+                        <apex:inputField styleClass="shortUserDropdown requiredTitle" value="{!step.ApprovalStep.Assigned_Approver__c}" rendered="{!!step.isLocked && (editMode || step.ApprovalStep.id = null)}" />
+                    </apex:outputPanel>
+                    <apex:outputLink value="/{!step.ApprovalStep.Assigned_Approver__c}" target="_blank" rendered="{!step.isLocked || (!editMode && step.ApprovalStep.id != null)}" >
+                        {!step.ApprovalStep.Assigned_Approver__r.Name} 
+                    </apex:outputLink>
+                </apex:column>
+                
+                <apex:column value="{!step.ApprovalStep.Delegate__c}" />
+                
+                <apex:column >
+                    <apex:facet name="header">Deactivate<br/>Step</apex:facet>
+                    <apex:inputField value="{!step.ApprovalStep.Marked_for_Deletion__c}" rendered="{!editMode && step.ApprovalStep.id != null}" />
+                    <apex:outputField value="{!step.ApprovalStep.Marked_for_Deletion__c}" rendered="{!!editMode && step.ApprovalStep.id != null}" />
+                </apex:column>
+            </apex:pageBlockTable>
+     
+            <script type="text/javascript" language="javascript">
+                j$(".requiredTitle").attr('title', 'Required');
+                j$(".lookupInput").find("input").attr('title', 'Required');
+            
+            </script>
+     
+          <apex:pageMessages />  
+        </apex:pageBlock>
+        <!--apex:pageBlock >
+        </apex:pageBlock-->
+    </apex:form>
+    <style>
+        span.dateFormat{
+            display:none;
+        }
+        div.shortUserDropdown select{
+            max-width:75px;
+        }
+        span.lookupInput input{
+            max-width:100px;
+        }
+        .ExternalReviewPartyInput{
+            max-width:105px;
+        }
+        select.shortRoleDropdown{
+            max-width:100px;
+        }
+        select.shortSeqDropdown{
+            max-width:50px;
+        }
+    </style>
+</apex:page>

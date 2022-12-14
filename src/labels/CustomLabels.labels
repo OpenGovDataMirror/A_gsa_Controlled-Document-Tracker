@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomLabels xmlns="http://soap.sforce.com/2006/04/metadata">
+    <labels>
+        <fullName>CDT_Error</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Valid CDT User or Email</shortDescription>
+        <value>You must select the valid CDT user, please email &apos;Admin&apos; for adding new CDT users.</value>
+    </labels>
+	<labels>
+		<fullName>CDT_File_Deletion_Request</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>File Deletion Request</shortDescription>
+        <value>To request deletion of this file, e-mail 'Admin' and provide the reason for deletion.</value>
+	</labels>
+	<labels>
+		<fullName>CDT_Issue_Controls</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Issuing CDT Controls</shortDescription>
+        <value>For help issuing controls for the Administrator's signature, please email 'Admin'</value>
+	</labels>	
+</CustomLabels>

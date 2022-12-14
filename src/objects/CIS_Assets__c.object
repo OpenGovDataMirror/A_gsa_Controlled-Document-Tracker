@@ -1,0 +1,892 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <description>This object is used to track all assets for CIS (Congressional Inventory System)</description>
+    <enableActivities>false</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableEnhancedLookup>false</enableEnhancedLookup>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>true</enableHistory>
+    <enableLicensing>false</enableLicensing>
+    <enableReports>true</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <externalSharingModel>Private</externalSharingModel>
+    <fields>
+        <fullName>Asset_Number__c</fullName>
+        <externalId>false</externalId>
+        <label>Asset Number</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>AutoNumber</type>
+    </fields>
+    <fields>
+        <fullName>Availiable_Budget_for_MOC__c</fullName>
+        <externalId>false</externalId>
+        <formula>CIS_Office__r.Member_ID__r.Available_Budget__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Availiable Budget for MOC</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>CIS_Office__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>Used by CIS - Lookup to PmoAo Office in which this Asset is located</description>
+        <externalId>false</externalId>
+        <label>CIS Office</label>
+        <lookupFilter>
+            <active>true</active>
+            <filterItems>
+                <field>CIS_Offices__c.RecordTypeId</field>
+                <operation>equals</operation>
+                <value>Senate</value>
+            </filterItems>
+            <isOptional>false</isOptional>
+        </lookupFilter>
+        <referenceTo>CIS_Offices__c</referenceTo>
+        <relationshipLabel>CIS Assets</relationshipLabel>
+        <relationshipName>CIS_Assets</relationshipName>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Carpet_Drapes_4_yr_10mo_Email_Sent__c</fullName>
+        <defaultValue>&quot;N&quot;</defaultValue>
+        <description>This is default N, changes to Y once the email alert has been sent.  Condition for sending = Carpet Drapes become 4 years 10 months from Date Received.  Hidden field used by scheduler.</description>
+        <externalId>false</externalId>
+        <label>Carpet Drapes 4 yr 10mo Email Sent</label>
+        <length>1</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Carpet_Drapes_5_yr_Cost_Removed__c</fullName>
+        <defaultValue>&quot;N&quot;</defaultValue>
+        <description>This is default N, changes to Y once the spend budget amount has been adjusted.  Condition for use:   Carpet Drapes become 5 years from Date Received, the cost of this asset is to come out of the spent budget amount.  Hidden field used by scheduler.</description>
+        <externalId>false</externalId>
+        <label>Carpet Drapes 5 yr Cost Removed</label>
+        <length>1</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Comments__c</fullName>
+        <externalId>false</externalId>
+        <label>Comments</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Credit__c</fullName>
+        <externalId>false</externalId>
+        <label>Credit</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Current_CIS_Office__c</fullName>
+        <description>Used by workflow rules to keep track of where the asset is located, and also to track when an asset moves in and out of storage and excess.</description>
+        <externalId>false</externalId>
+        <formula>CIS_Office__r.PMO_AO_Number__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Current CIS Office</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Date_Ordered__c</fullName>
+        <description>What date was this inventory item ordered?</description>
+        <externalId>false</externalId>
+        <label>Date Ordered</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Date_Present_Office_Received__c</fullName>
+        <externalId>false</externalId>
+        <label>Date Present Office Received</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Date_Received__c</fullName>
+        <externalId>false</externalId>
+        <label>Date Received</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Description__c</fullName>
+        <description>Description of Asset</description>
+        <externalId>false</externalId>
+        <label>Description</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>Excess_Date__c</fullName>
+        <externalId>false</externalId>
+        <label>Excess Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Expense_Type__c</fullName>
+        <externalId>false</externalId>
+        <label>Expense Type</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>D - Furniture</fullName>
+                    <default>false</default>
+                    <label>D - Furniture</label>
+                </value>
+                <value>
+                    <fullName>B - Carpet/Drapes</fullName>
+                    <default>false</default>
+                    <label>B - Carpet/Drapes</label>
+                </value>
+                <value>
+                    <fullName>A - Expensed</fullName>
+                    <default>false</default>
+                    <label>A - Expensed</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Fair_Market_Value__c</fullName>
+        <externalId>false</externalId>
+        <label>Fair Market Value</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Final_Payback_Amount__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF (Date_Received__c + 4383 &lt;= TODAY(), 0, 
+IF( Remove_from_Billing__c, 0, 
+IF( NOT(ISPICKVAL( Expense_Type__c , &quot;D - Furniture&quot;)),0, 
+IF( ISBLANK(Excess_Date__c), (Total_Cost__c * 0.0833333) * (12 - (YEAR(TODAY()) - YEAR( Date_Received__c ))), 
+(Total_Cost__c * 0.0833333) * (12 - (YEAR(Excess_Date__c) - YEAR( Date_Received__c ))) 
+) 
+) 
+)
+)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Final Payback Amount</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Invoice_Number__c</fullName>
+        <externalId>false</externalId>
+        <label>Invoice Number</label>
+        <length>20</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Legacy_Created_By__c</fullName>
+        <description>Reportable fields for legacy data from Lotus Notes</description>
+        <externalId>false</externalId>
+        <label>Legacy Created By</label>
+        <length>100</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Legacy_Created_Date__c</fullName>
+        <description>Reportable fields storing Legacy data from Lotus Notes</description>
+        <externalId>false</externalId>
+        <label>Legacy Created Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>Legacy_Modified_By__c</fullName>
+        <description>Reportable fields storing Legacy data from Lotus Notes</description>
+        <externalId>false</externalId>
+        <label>Legacy Modified By</label>
+        <length>100</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Legacy_Modified_Date__c</fullName>
+        <description>Reportable fields storing Legacy data from Lotus Notes</description>
+        <externalId>false</externalId>
+        <label>Legacy Modified Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>Member_of_Congress__c</fullName>
+        <externalId>false</externalId>
+        <formula>CIS_Office__r.Member_of_Congress__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Member of Congress</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Other_Cost__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Freight costs, etc.</inlineHelpText>
+        <label>Other Cost</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>PO_Number__c</fullName>
+        <externalId>false</externalId>
+        <label>PO Number</label>
+        <length>50</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Part_Number__c</fullName>
+        <externalId>false</externalId>
+        <label>Part Number</label>
+        <length>120</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Quantity__c</fullName>
+        <defaultValue>1</defaultValue>
+        <description>Enter the quantity of items on this record.</description>
+        <externalId>false</externalId>
+        <label>Quantity</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Quarterly_SAA_Billing_Amount__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF( Remove_from_Billing__c, 0, 
+( 
+IF( NOT(ISPICKVAL( Expense_Type__c , &quot;D - Furniture&quot;)),0, 
+( 
+IF( (DATE(YEAR(TODAY())-12, MONTH(TODAY()), DAY(TODAY())) - Date_Received__c) &gt;= 0, 0, ((Total_Cost__c * 0.0833333) / 4)) 
+) 
+) 
+) 
+)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Quarterly SAA Billing Amount</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Reference_Number__c</fullName>
+        <description>Legacy Inventory Number for CIS Assets</description>
+        <externalId>false</externalId>
+        <label>Reference Number</label>
+        <length>120</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Region__c</fullName>
+        <description>Used by CIS. Cannot be removed as it&apos;s being used by &quot;Update Reporting Region&quot; workflow with Storage/Excess rules. Cannot use reference field within workflow rules so have to refer from here.</description>
+        <externalId>false</externalId>
+        <formula>TEXT(CIS_Office__r.Member_ID__r.Region__c)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Region</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Remove_from_Billing__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>If this item has completed it&apos;s final payback from Excess (less than 12 years) then this is to be checked so it doesn&apos;t appear in future payback billings.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>If this item has completed it&apos;s final payback from Excess (less than 12 years) then this is to be checked so it doesn&apos;t appear in future payback billings.</inlineHelpText>
+        <label>Remove from Billing</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Removed_From_PMO_AO__c</fullName>
+        <externalId>false</externalId>
+        <label>Removed From PMO/AO</label>
+        <length>10</length>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Removed_from_Senator__c</fullName>
+        <externalId>false</externalId>
+        <label>Removed from Senator</label>
+        <length>120</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Reporting_Region__c</fullName>
+        <description>This asset is owned by this region.</description>
+        <externalId>false</externalId>
+        <label>Reporting Region</label>
+        <length>2</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Shipped_From__c</fullName>
+        <externalId>false</externalId>
+        <label>Shipped From</label>
+        <length>250</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Storage_Date__c</fullName>
+        <externalId>false</externalId>
+        <label>Storage Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Total_Cost__c</fullName>
+        <externalId>false</externalId>
+        <formula>(Unit_Cost__c * Quantity__c) + (Other_Cost__c * Quantity__c )- Credit__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Total Cost</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Unit_Cost__c</fullName>
+        <defaultValue>0.00</defaultValue>
+        <externalId>false</externalId>
+        <label>Unit Cost</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Unit_of_Issue__c</fullName>
+        <externalId>false</externalId>
+        <label>Unit of Issue</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Each</fullName>
+                    <default>false</default>
+                    <label>Each</label>
+                </value>
+                <value>
+                    <fullName>Box</fullName>
+                    <default>false</default>
+                    <label>Box</label>
+                </value>
+                <value>
+                    <fullName>Package</fullName>
+                    <default>false</default>
+                    <label>Package</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Vendor__c</fullName>
+        <externalId>false</externalId>
+        <label>Vendor</label>
+        <length>120</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Warranty_Expiration_Date__c</fullName>
+        <externalId>false</externalId>
+        <label>Warranty Exp. Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <label>CIS Asset</label>
+    <listViews>
+        <fullName>All</fullName>
+        <columns>NAME</columns>
+        <columns>Description__c</columns>
+        <columns>Asset_Number__c</columns>
+        <columns>Total_Cost__c</columns>
+        <columns>CIS_Office__c</columns>
+        <columns>Reporting_Region__c</columns>
+        <columns>Date_Received__c</columns>
+        <filterScope>Everything</filterScope>
+        <label>All</label>
+    </listViews>
+    <listViews>
+        <fullName>All_items_in_Excess</fullName>
+        <booleanFilter>1 OR 2</booleanFilter>
+        <columns>Current_CIS_Office__c</columns>
+        <columns>NAME</columns>
+        <columns>Asset_Number__c</columns>
+        <columns>Removed_From_PMO_AO__c</columns>
+        <columns>Reporting_Region__c</columns>
+        <columns>Unit_Cost__c</columns>
+        <columns>Final_Payback_Amount__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Current_CIS_Office__c</field>
+            <operation>equals</operation>
+            <value>66AA</value>
+        </filters>
+        <filters>
+            <field>Current_CIS_Office__c</field>
+            <operation>equals</operation>
+            <value>EXCS</value>
+        </filters>
+        <label>All items in Excess</label>
+    </listViews>
+    <listViews>
+        <fullName>All_items_in_Storage</fullName>
+        <columns>NAME</columns>
+        <columns>Asset_Number__c</columns>
+        <columns>Removed_From_PMO_AO__c</columns>
+        <columns>Reporting_Region__c</columns>
+        <columns>Unit_Cost__c</columns>
+        <columns>Quarterly_SAA_Billing_Amount__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Current_CIS_Office__c</field>
+            <operation>equals</operation>
+            <value>77ZA</value>
+        </filters>
+        <label>All items in Storage</label>
+    </listViews>
+    <listViews>
+        <fullName>Assets_in_66AA_w_Payback_Amt</fullName>
+        <columns>NAME</columns>
+        <columns>Asset_Number__c</columns>
+        <columns>Final_Payback_Amount__c</columns>
+        <columns>Total_Cost__c</columns>
+        <columns>Date_Received__c</columns>
+        <columns>Excess_Date__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Current_CIS_Office__c</field>
+            <operation>equals</operation>
+            <value>66AA</value>
+        </filters>
+        <label>Assets in 66AA with Payback Amt</label>
+    </listViews>
+    <listViews>
+        <fullName>Senators_items_under_12</fullName>
+        <columns>NAME</columns>
+        <columns>Asset_Number__c</columns>
+        <columns>Quarterly_SAA_Billing_Amount__c</columns>
+        <columns>Final_Payback_Amount__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Current_CIS_Office__c</field>
+            <operation>equals</operation>
+            <value>002</value>
+        </filters>
+        <label>Senators items under 12 years old</label>
+    </listViews>
+    <nameField>
+        <label>Asset Title</label>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+    </nameField>
+    <pluralLabel>CIS Assets</pluralLabel>
+    <searchLayouts>
+        <customTabListAdditionalFields>Description__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Asset_Number__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Current_CIS_Office__c</customTabListAdditionalFields>
+        <excludedStandardButtons>New</excludedStandardButtons>
+        <lookupDialogsAdditionalFields>Asset_Number__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Description__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Expense_Type__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Date_Received__c</lookupDialogsAdditionalFields>
+        <searchResultsAdditionalFields>Asset_Number__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Description__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Expense_Type__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Date_Received__c</searchResultsAdditionalFields>
+    </searchLayouts>
+    <sharingModel>Private</sharingModel>
+    <validationRules>
+        <fullName>CIS_Received_Date_cannot_before_Ord_Date</fullName>
+        <active>true</active>
+        <description>Cannot enter a Received Date that is earlier than the Ordered Date.</description>
+        <errorConditionFormula>Date_Ordered__c &gt; Date_Received__c</errorConditionFormula>
+        <errorMessage>Cannot enter a Received Date that is earlier than the Ordered Date.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>CIS_Received_Date_in_future</fullName>
+        <active>true</active>
+        <description>Cannot enter a Received Date that is later than today</description>
+        <errorConditionFormula>Date_Received__c &gt; TODAY()</errorConditionFormula>
+        <errorMessage>Cannot enter a Received Date that is later than today</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>CIS_cant_move_offic_for_A_B_Expense_Type</fullName>
+        <active>true</active>
+        <description>Can&apos;t move office locations for A or B expense type items</description>
+        <errorConditionFormula>AND (ISCHANGED( CIS_Office__c ), 
+
+OR(ISPICKVAL(Expense_Type__c , &quot;B - Carpet/Drapes&quot;), 
+ISPICKVAL(Expense_Type__c , &quot;A - Expensed&quot;) 
+) 
+)</errorConditionFormula>
+        <errorMessage>Can&apos;t move office locations for A or B expense type items</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>CIS_cant_move_to_Excess_Under_12_if_old</fullName>
+        <active>true</active>
+        <description>Cannot move this item into Excess Under 12 Yrs because it&apos;s too old.</description>
+        <errorConditionFormula>AND (DATE(YEAR(TODAY())-12, MONTH(TODAY()), DAY(TODAY())) - Date_Received__c &gt; 0, CIS_Office__r.PMO_AO_Number__c = &quot;66AA&quot;)</errorConditionFormula>
+        <errorMessage>Cannot move this item into Excess Under 12 Yrs because it&apos;s too old.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>CIS_do_not_move_to_Excess_if_not_12_yrs</fullName>
+        <active>true</active>
+        <description>Cannot move this item into Excess Over 12 Yrs because it&apos;s not old enough.</description>
+        <errorConditionFormula>AND (DATE(YEAR(TODAY())-12, MONTH(TODAY()), DAY(TODAY())) - Date_Received__c &lt;= 0,   CIS_Office__r.PMO_AO_Number__c = &quot;EXCS&quot;)</errorConditionFormula>
+        <errorMessage>Cannot move this item into Excess Over 12 Yrs because it&apos;s not old enough.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>CIS_only_Remove_from_Billg_if_Excess_u12</fullName>
+        <active>true</active>
+        <description>Cannot be moved to another location after Final Payback has been billed, OR: 
+Cannot check the Remove from Billing checkbox unless the item is in Excess Under 12 Yrs location.</description>
+        <errorConditionFormula>AND(NOT(  CIS_Office__r.PMO_AO_Number__c = &quot;66AA&quot;), 
+
+Remove_from_Billing__c 
+
+)</errorConditionFormula>
+        <errorMessage>Cannot be moved to another location after Final Payback has been billed OR 
+Cannot check the Remove from Billing checkbox unless the item is in Excess Under 12 Yrs location.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Cannot_change_Date_Recd_of_Expense_B</fullName>
+        <active>true</active>
+        <description>Once a record of Expense Type B is saved with a Date Received, you cannot change this record.</description>
+        <errorConditionFormula>AND(
+ISPICKVAL( Expense_Type__c, &quot;B - Carpet/Drapes&quot;), 
+ISCHANGED( Date_Received__c ),
+NOT(ISNULL(PRIORVALUE(Date_Received__c)))
+)</errorConditionFormula>
+        <errorMessage>Cannot change Date Received once an Expense Type B record is saved.  If you entered it incorrectly, please clone the record, adjust the clone correctly and save, then delete the incorrect record.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Cannot_change_Expense_Type_once_saved</fullName>
+        <active>true</active>
+        <description>Once a record is saved, do not allow the Expense Type to be changed.</description>
+        <errorConditionFormula>ISCHANGED( Expense_Type__c )</errorConditionFormula>
+        <errorMessage>You cannot change the Expense Type of a record once it is saved.  If you entered it incorrectly, please clone this record, save the clone correctly, then delete the incorrect record.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Cannot_move_asset_from_EXCS_to_Storage</fullName>
+        <active>true</active>
+        <errorConditionFormula>AND ( 
+OR ( PRIORVALUE( Current_CIS_Office__c ) =  &quot;EXCS&quot;, 
+PRIORVALUE( Current_CIS_Office__c ) =  &quot;66AA&quot; ),
+
+CIS_Office__r.PMO_AO_Number__c = &quot;77ZA&quot;
+)</errorConditionFormula>
+        <errorMessage>Can&apos;t move an asset from Excess to Storage</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Credit_must_be_greater_than_zero</fullName>
+        <active>true</active>
+        <description>Credit must be greater than zero</description>
+        <errorConditionFormula>Credit__c &lt; 0</errorConditionFormula>
+        <errorMessage>Credit must be greater than zero</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>FairMktValue_must_be_greater_than_zero</fullName>
+        <active>true</active>
+        <description>Fair Market Value must be greater than zero</description>
+        <errorConditionFormula>Fair_Market_Value__c  &lt; 0</errorConditionFormula>
+        <errorMessage>Fair Market Value must be greater than zero</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Other_Cost_must_be_greater_than_zero</fullName>
+        <active>true</active>
+        <description>Other Cost must be greater than zero</description>
+        <errorConditionFormula>Other_Cost__c &lt; 0</errorConditionFormula>
+        <errorMessage>Other Cost must be greater than zero</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Quantity_must_be_greater_than_zero</fullName>
+        <active>true</active>
+        <description>Quantity must be greater than zero</description>
+        <errorConditionFormula>Quantity__c &lt;= 0</errorConditionFormula>
+        <errorMessage>Quantity must be greater than zero</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Unit_Cost_must_be_greater_than_zero</fullName>
+        <active>true</active>
+        <description>Unit Cost must be greater than zero</description>
+        <errorConditionFormula>Unit_Cost__c  &lt; 0</errorConditionFormula>
+        <errorMessage>Unit Cost must be greater than zero</errorMessage>
+    </validationRules>
+    <visibility>Public</visibility>
+</CustomObject>

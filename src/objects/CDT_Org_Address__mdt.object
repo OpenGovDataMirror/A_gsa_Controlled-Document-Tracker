@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>This Custom Metadata is being used in CDT App&apos;s apex classes to fetch Org Wide Email address based on the ID given in this metadata.</description>
+    <fields>
+        <fullName>OrgID__c</fullName>
+        <externalId>false</externalId>
+        <fieldManageability>SubscriberControlled</fieldManageability>
+        <label>OrgID</label>
+        <length>18</length>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <label>CDT Org Address</label>
+    <pluralLabel>CDT Org Address</pluralLabel>
+    <visibility>Public</visibility>
+</CustomObject>

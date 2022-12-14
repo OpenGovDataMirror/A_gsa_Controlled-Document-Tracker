@@ -1,0 +1,3 @@
+<apex:page standardController="Approval_Step__c" >
+    <flow:interview name="Deactivate_Modify_All_Access_to_Approval_Steps" finishLocation="/{!Approval_Step__c.Id}"/>
+</apex:page>

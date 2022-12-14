@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SharingRules xmlns="http://soap.sforce.com/2006/04/metadata">
+    <sharingCriteriaRules>
+        <fullName>OAS_Admin_User_Sharing_Rule</fullName>
+        <accessLevel>Edit</accessLevel>
+        <description>This rule shares all CD record with the &quot;CDT - OAS Admin User&quot; group with R/W access, with the exception of office B and C.</description>
+        <label>OAS Admin User Sharing Rule</label>
+        <sharedTo>
+            <group>CDT_OAS_Admin_User</group>
+        </sharedTo>
+        <criteriaItems>
+            <field>Name</field>
+            <operation>contains</operation>
+            <value>C</value>
+        </criteriaItems>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>OAS_ExecSec_Admin_Record_Access</fullName>
+        <accessLevel>Edit</accessLevel>
+        <description>This allows Controlled Document to be shared with ExecSec Admin</description>
+        <label>OAS ExecSec Admin Record Access</label>
+        <sharedTo>
+            <group>CDT_OAS_Admin_User</group>
+        </sharedTo>
+        <criteriaItems>
+            <field>Allow_ExecSec_Access__c</field>
+            <operation>equals</operation>
+            <value>True</value>
+        </criteriaItems>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>OAS_ExecSec_Record_Access</fullName>
+        <accessLevel>Edit</accessLevel>
+        <description>This allows Controlled Document to be shared with ExecSec(OAS)</description>
+        <label>OAS ExecSec Record Access</label>
+        <sharedTo>
+            <group>CDT_OAS_User</group>
+        </sharedTo>
+        <criteriaItems>
+            <field>Allow_ExecSec_Access__c</field>
+            <operation>equals</operation>
+            <value>True</value>
+        </criteriaItems>
+    </sharingCriteriaRules>
+</SharingRules>

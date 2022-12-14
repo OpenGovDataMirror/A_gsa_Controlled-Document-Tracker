@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customSettingsType>List</customSettingsType>
+    <description>Sends out emails based on whether or not a user has been granted access to a Controlled Document after clicking the Grant Update Access button. It will send out an email only one time.</description>
+    <enableFeeds>false</enableFeeds>
+    <fields>
+        <fullName>Email_Address__c</fullName>
+        <externalId>false</externalId>
+        <label>Email Address</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Email</type>
+        <unique>false</unique>
+    </fields>
+    <label>Controlled Document Emails</label>
+    <visibility>Public</visibility>
+</CustomObject>

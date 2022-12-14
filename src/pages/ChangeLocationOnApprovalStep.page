@@ -1,0 +1,6 @@
+<apex:page standardController="Approval_Step__c" lightningStylesheets="true">
+    <flow:interview name="Change_Location_on_Approval_Steps" finishLocation="/apex/DeactivateModifyAllOnApprovalStep?Id={!Approval_Step__c.Id}" buttonLocation="bottom">
+        <apex:param name="ApprovalStepID" value="{!Approval_Step__c.Id}"/>
+        <apex:param name="CDTExecSecAdmin" value="{!$Permission.CDTExecSecAdmin}"/>
+    </flow:interview>
+</apex:page>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customSettingsType>List</customSettingsType>
+    <description>This object is being used to store the Admin user name. This admin user will get the collaborator access as soon as FeedItem is created for the Controlled Document. This will help us in running the batch job &quot;GrantAccessToChatterUsers&quot;.</description>
+    <enableFeeds>false</enableFeeds>
+    <fields>
+        <fullName>UserName__c</fullName>
+        <caseSensitive>false</caseSensitive>
+        <externalId>false</externalId>
+        <label>UserName</label>
+        <length>100</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>true</unique>
+    </fields>
+    <label>Controlled Document Admin</label>
+    <visibility>Public</visibility>
+</CustomObject>

@@ -1,0 +1,24 @@
+Your approval step for the following controlled document is overdue. 
+
+Your role: {!Approval_Step__c.Role_of_Approver__c} 
+
+Document ID: {!Controlled_Document__c.Name} 
+Title: {!Controlled_Document__c.Title_Formula__c}
+Document Type: {!Controlled_Document__c.Correspondence_Type__c} 
+Owner: {!Controlled_Document__c.CreatedBy} 
+Approval Step Due Date: {!Approval_Step__c.Due_Date__c} 
+Expedite Record: {!if(Controlled_Document__c.Expedite_Record__c, "No", "Yes")}
+Expedite Instructions: {!Controlled_Document__c.Instructions_for_Expediting__c}
+Final Signatory: {!Controlled_Document__c.Final_Signatory__c}
+Summary: {!Controlled_Document__c.Summary__c}
+
+Steps for approving the documents: 
+
+1. Scroll down to the Approval Steps section. 
+2. Click on the number beside your name. 
+3. The Approval Step Detail page will open. You may approve, approve with comments, or reject the control. 
+4. Post a message in the Chatter feed confirming the approval or rejection and @mention the person who requested the approval. 
+
+Please click here to approve or reject: {!Approval_Step__c.Link} 
+
+If you would like to view the controlled document, please click here: {!Controlled_Document__c.Link}
